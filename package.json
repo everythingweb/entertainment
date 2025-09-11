@@ -1,6 +1,5 @@
 {
   "name": "sass-landing-page",
-  "homepage": "https://everythingweb.github.io/bucregaltech/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -36,5 +35,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.13",
     "vite": "^6.1.0"
-  }
+  },
+   "homepage": "https://everythingweb.github.io/bucregaltech"
 }

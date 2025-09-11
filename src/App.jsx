@@ -11,6 +11,7 @@ import TestimonialsSection from './components/TestimonialsSection'
 import NewsletterSection from './components/NewsletterSection'
 import Footer from './components/Footer'
 import Schedule1 from './components/Schedule1'
+import ContactUs from './components/ContactUs'
 import NewPricing from './components/NewPricing'
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Schedule1 />
         <ServicesSection />
         <TestimonialsSection />
+        <ContactUs />
         <NewsletterSection />
         <Footer />
 
