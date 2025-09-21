@@ -1,6 +1,8 @@
 import scheduleImage from '../assets/data analysis.webp'
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
+import { Link } from 'react-router';
+
 
 const Schedule1 = () => {
   return (
@@ -31,7 +33,7 @@ const Schedule1 = () => {
         >
           <motion.span 
             variants={fadeIn('up', 0.4)}
-            className="text-orange-500 font-semibold"
+            className="text-orange-500 font-semibold text-2xl"
           >
             Data Analysis
           </motion.span>
@@ -46,7 +48,7 @@ const Schedule1 = () => {
             variants={fadeIn('up', 0.6)}
             className="text-gray-600 mb-8"
           >
-Our hands-on data analysis program teaches you to turn complex data into actionable insights, helping you land a high-paying job in a growing field.          </motion.p>
+Our hands-on data analysis program teaches you to turn complex data into actionable insights, helping you land a high-paying job in a growing field.</motion.p>
           <motion.a 
             variants={fadeIn('up', 0.7)}
             href="#" 

@@ -2,36 +2,36 @@ import React from 'react';
 
 const courses = [
   {
-    title: 'Beginner',
+    title: 'Data Analysis',
     price: '$499',
     features: [
-      'Access to all core lectures',
-      'Basic coding exercises',
-      'Community Slack access',
-      'Certificate of completion'
+      'One-on-one coaching',
+      'Core tools: Excel, SQL',
+      'Weekly live Q&A sessions',
+      'Certificate of completion.'
     ],
     isPopular: false,
   },
   {
-    title: 'Advanced',
+    title: 'Website Development',
     price: '$899',
     features: [
-      'All Beginner features',
+      'Front-end and backend basics',
       'Weekly live Q&A sessions',
-      'Personalized project feedback',
-      'Resume and portfolio review',
+      'React, Node.js, databases',
+      'Advanced frameworks, specialized projects.',
     ],
     isPopular: true,
   },
   {
-    title: 'Professional',
+    title: 'Cyber Security',
     price: '$1,499',
     features: [
-      'All Advanced features',
-      'Dedicated one-on-one mentorship',
-      'Job placement assistance',
-      'Mock interviews',
-      'Advanced project showcase',
+      'Threat basics, security fundamentals',
+      'Ethical hacking basics',
+      'Network security, vulnerability scanning',
+      'Security tools overview',
+      'Incident response training.',
     ],
     isPopular: false,
   },
@@ -46,7 +46,7 @@ const NewPricing1 = () => {
             Choose Your Learning Path
           </h1>
           <p className="mt-4 text-xl text-slate-500">
-            Find the perfect plan to kickstart your career in React.
+            Find the perfect skill to kickstart your career in tech.
           </p>
         </header>
 

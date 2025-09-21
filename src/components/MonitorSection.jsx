@@ -21,7 +21,7 @@ const MonitorSection = () => {
         >
           <motion.span 
             variants={fadeIn('up', 0.4)}
-            className="text-emerald-500 font-semibold"
+            className="text-emerald-500 font-semibold text-2xl"
           >
             Cyber Security
           </motion.span>

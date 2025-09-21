@@ -10,7 +10,7 @@ const ScheduleSection = () => {
       whileInView="show"
       className="max-w-7xl mx-auto px-4 py-16 md:py-24"
     >
-      <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
+      <div id="services" className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
         {/* Left side - Image */}
         <motion.div 
           variants={fadeIn('right', 0.3)}
@@ -31,7 +31,7 @@ const ScheduleSection = () => {
         >
           <motion.span 
             variants={fadeIn('up', 0.4)}
-            className="text-orange-500 font-semibold"
+            className="text-orange-500 font-semibold text-2xl"
           >
            Website Development
           </motion.span>

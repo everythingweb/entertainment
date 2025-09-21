@@ -10,7 +10,7 @@ const testimonials = [
   {
     id: 1,
     name: "Damilare Mark", 
-    image: "https://bucregaltech.com/images/Avatar-1-p-500.png",
+    image: "https://share.google/images/wbx4ejnZSVDIzAzup",
     text: "Studying software development and product design at Buc Regal Tech was a game-changer for my career. The comprehensive curriculum and hands-on projects gave me the skills and confidence I needed to excel in the tech industry.",
   },
   {

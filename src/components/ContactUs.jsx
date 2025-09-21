@@ -25,7 +25,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="font-sans antialiased bg-slate-50 text-slate-800 p-8 min-h-screen flex items-center justify-center">
+    <div id="contact" className="font-sans antialiased bg-slate-50 text-slate-800 p-8 min-h-screen flex items-center justify-center">
       <div className="container mx-auto max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="p-8 sm:p-12">
           <header className="text-center mb-10">
