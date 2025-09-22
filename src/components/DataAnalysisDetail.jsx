@@ -1,6 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import scheduleImage from '../assets/data analysis.webp'
 
-const DataAnalisysiDetail = () => {
+
+const DataAnalysisDetail = () => {
+   useEffect(() => {
+    // Add a small delay to ensure the scroll happens after the page content is fully rendered
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100); // A 100ms delay is usually sufficient
+
+    return () => clearTimeout(timer); // Clean up the timer on component unmount
+  }, []);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,8 +30,6 @@ const DataAnalisysiDetail = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form data submitted:', formData);
-    // You can add your form submission logic here, e.g., an API call.
-    // For now, we'll just log the data and reset the form.
     setFormData({
       name: '',
       email: '',
@@ -28,7 +38,7 @@ const DataAnalisysiDetail = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen text-gray-800 font-sans">
+    <div  className="bg-white min-h-screen text-gray-800 font-sans p-8">
       <style>
         {`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Syne:wght@700;800&display=swap');
@@ -40,12 +50,12 @@ const DataAnalisysiDetail = () => {
         }
         `}
       </style>
-      
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
         {/* Breadcrumbs */}
         <nav className="text-sm font-montserrat mb-8 text-gray-500">
-          <a href="#" className="hover:underline">Home</a> &gt; <a href="#" className="hover:underline">Courses</a> &gt; <span className="font-bold text-indigo-600">Data Analysis Course</span>
+          <Link to="/" className="hover:underline">Home</Link>   &gt; <span className="font-bold text-indigo-600">Data Analysis Course</span>
         </nav>
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -80,11 +90,11 @@ const DataAnalisysiDetail = () => {
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-lg">
               <img
-                src="https://placehold.co/600x400/D7E6FF/000000?text=Data+Analysis"
-                alt="Data Analysis Course Graphic"
+                src={scheduleImage}                
+                 alt="Data Analysis Course Graphic"
                 className="w-full h-auto rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute top-0 left-0 w-full h-full bg-indigo-600 opacity-20 rounded-xl"></div>
+              <div className="absolute top-0 left-0 w-full h-full  opacity-20 rounded-xl"></div>
             </div>
           </div>
         </div>
@@ -94,7 +104,6 @@ const DataAnalisysiDetail = () => {
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold font-syne text-center mb-10">Recommended credentials</h2>
-          {/* A simple placeholder card for a recommended course */}
           <div className="bg-white rounded-xl shadow-md p-6 max-w-2xl mx-auto">
             <div className="flex items-center space-x-4 mb-4">
               <img src="https://placehold.co/50x50/E2E8F0/A0AEC0?text=Logo" alt="Partner Logo" className="rounded-full" />
@@ -172,4 +181,5 @@ const DataAnalisysiDetail = () => {
   );
 };
 
-export default DataAnalisysiDetail;
+
+export default DataAnalysisDetail;

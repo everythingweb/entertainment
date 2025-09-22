@@ -1,6 +1,7 @@
 import scheduleImage from '../assets/fullstack-2.jpg'
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
+import { Link } from 'react-router';
 
 const ScheduleSection = () => {
   return (
@@ -48,27 +49,28 @@ const ScheduleSection = () => {
           >
            Our comprehensive program gives you the in-demand skills and portfolio projects you need to land a high-paying job
           </motion.p>
-          <motion.a 
-            variants={fadeIn('up', 0.7)}
-            href="#" 
-            className="text-blue-500 font-semibold flex items-center gap-2 hover:gap-4 transition-all"
-          >
-           Take career assessment.
-            <motion.svg 
-              variants={fadeIn('left', 0.8)}
-              className="w-5 h-5" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M17 8l4 4m0 0l-4 4m4-4H3" 
-              />
-            </motion.svg>
-          </motion.a>
+          <Link to="/web-development" passHref>
+  <motion.a
+    variants={fadeIn('up', 0.7)}
+    className="text-blue-500 font-semibold flex items-center gap-2 hover:gap-4 transition-all"
+  >
+    Take career assessment.
+    <motion.svg
+      variants={fadeIn('left', 0.8)}
+      className="w-5 h-5"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M17 8l4 4m0 0l-4 4m4-4H3"
+      />
+    </motion.svg>
+  </motion.a>
+</Link>
         </motion.div>
       </div>
     </motion.section>

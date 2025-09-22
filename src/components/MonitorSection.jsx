@@ -3,6 +3,8 @@ import { fadeIn, textVariant } from "../utils/motion";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import monitorCardBg from '../assets/cybersecurity-1.avif';
+import { Link } from "react-router";
+import CybersecurityDetail from './CyberSecurity'
 
 const MonitorSection = () => {
   return (
@@ -37,9 +39,8 @@ const MonitorSection = () => {
           >
             Our program provides hands-on training and certification prep, giving you the skills to defend networks and data from evolving threats.
           </motion.p>
-          <motion.a 
-            variants={fadeIn('up', 0.7)}
-            href="#" 
+          <Link
+            to="/cyber-security"
             className="text-blue-500 font-semibold flex items-center gap-2 hover:gap-4 transition-all"
           >
            Take career assessment
@@ -57,7 +58,7 @@ const MonitorSection = () => {
                 d="M17 8l4 4m0 0l-4 4m4-4H3" 
               />
             </motion.svg>
-          </motion.a>
+       </Link>
         </motion.div>
 
         {/* Right side - Swiper with background */}
