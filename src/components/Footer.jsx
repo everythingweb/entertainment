@@ -1,160 +1,118 @@
-import React from 'react'
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
-import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
+import React from 'react';
+// Importing icons from Heroicons for professional, clean look
+import { BeakerIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+import { AcademicCapIcon, HomeIcon, LinkIcon } from '@heroicons/react/24/outline';
+import { SocialIcon } from 'react-social-icons'; // Assuming 'react-social-icons' is installed
 
-const Footer = () => {
-  const footerLinks = {
-    company: [
-      { name: 'About', href: '#' },
-      { name: 'Terms of Use', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'How it Works', href: '#' },
-      { name: 'Contact Us', href: '#' },
+// Define navigation link groups
+const linkGroups = [
+  {
+    title: "Explore",
+    links: [
+      { name: 'Home', href: '/', icon: HomeIcon },
+      { name: 'Blog Index', href: '/blog', icon: AcademicCapIcon },
+      { name: 'Categories', href: '/categories', icon: BeakerIcon },
     ],
-    getHelp: [
-      { name: 'Support Carrer', href: '#' },
-      { name: '24h Service', href: '#' },
-      { name: 'Quick Chat', href: '#' },
+  },
+  {
+    title: "About & Legal",
+    links: [
+      { name: 'About Us', href: '/about', icon: AcademicCapIcon },
+      { name: 'Contact', href: '/contact', icon: EnvelopeIcon },
+      { name: 'Privacy Policy', href: '/privacy', icon: LinkIcon },
+      { name: 'Terms of Service', href: '/terms', icon: LinkIcon },
     ],
-    support: [
-      { name: 'FAQ', href: '#' },
-      { name: 'Policy', href: '#' },
-      { name: 'Business', href: '#' },
-    ],
-    contact: [
-      { name: 'WhatsApp', href: '#' },
-      { name: 'Support 24', href: '#' },
-    ],
-  }
+  },
+];
 
+// Define social media links
+const socialLinks = [
+  { url: 'https://twitter.com', label: 'Twitter' },
+  { url: 'https://linkedin.com', label: 'LinkedIn' },
+  { url: 'https://github.com', label: 'GitHub' },
+  { url: 'https://youtube.com', label: 'YouTube' },
+];
+
+// Sub-Component for a single column of links
+const FooterLinkGroup = ({ group }) => (
+  <div>
+    <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
+      {group.title}
+    </h3>
+    <ul role="list" className="mt-4 space-y-4">
+      {group.links.map((link) => (
+        <li key={link.name}>
+          <a
+            href={link.href}
+            className="text-base text-gray-300 hover:text-indigo-400 transition-colors duration-200 flex items-center"
+          >
+            {/* Using the icon component */}
+            {link.icon && <link.icon className="w-4 h-4 mr-2" aria-hidden="true" />}
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+const BlogFooter = () => {
   return (
-    <motion.footer 
-      variants={fadeIn('up', 0.2)}
-      initial="hidden"
-      whileInView="show"
-      className="bg-gray-50"
-    >
-      <div className="section-container">
-        <motion.div 
-          variants={fadeIn('up', 0.3)}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12"
-        >
-          {/* Brand Column */}
-          <motion.div 
-            variants={fadeIn('right', 0.4)}
-            className="lg:col-span-4"
-          >
-            <motion.div 
-              variants={fadeIn('down', 0.5)}
-              className="flex items-center gap-1 mb-6"
-            >
-              <div className="w-4 h-4 bg-blue-600 rounded-full opacity-75"></div>
-              <div className="w-4 h-4 bg-red-500 rounded-full -ml-2"></div>
-              <span className="text-xl font-medium ml-1">Buc Regal Tech</span>
-            </motion.div>
-            <motion.p 
-              variants={fadeIn('up', 0.6)}
-              className="text-gray-600 mb-6"
-            >
-              We are a beacon of tech education illuminating pathways to boundless innovations.
-            </motion.p>
-            <motion.div 
-              variants={fadeIn('up', 0.7)}
-              className="flex gap-4"
-            >
-              <motion.a 
-                whileHover={{ scale: 1.1 }}
-                href="#" 
-                className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
-              >
-                <FaFacebookF className="w-5 h-5" />
-              </motion.a>
-              <motion.a 
-                whileHover={{ scale: 1.1 }}
-                href="#" 
-                className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-400 hover:text-white transition-colors"
-              >
-                <FaTwitter className="w-5 h-5" />
-              </motion.a>
-              <motion.a 
-                whileHover={{ scale: 1.1 }}
-                href="#" 
-                className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-700 hover:text-white transition-colors"
-              >
-                <FaLinkedinIn className="w-5 h-5" />
-              </motion.a>
-            </motion.div>
-          </motion.div>
+    <footer className="bg-gray-800" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">Footer</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="xl:grid xl:grid-cols-4 xl:gap-8">
+          
+          {/* Column 1: Logo and Brief Description */}
+          <div className="space-y-6 xl:col-span-1">
+            <h3 className="text-3xl font-extrabold text-white">
+              Blog Logo
+            </h3>
+            <p className="text-gray-400 text-base">
+              Your source for expert tutorials, deep-dive analyses, and the latest trends in development and technology.
+            </p>
+          </div>
 
-          {/* Links Columns */}
-          <motion.div 
-            variants={fadeIn('left', 0.4)}
-            className="lg:col-span-8"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
-                <motion.div 
-                  key={category}
-                  variants={fadeIn('up', 0.3 * (categoryIndex + 1))}
-                >
-                  <motion.h3 
-                    variants={textVariant(0.2)}
-                    className="text-lg font-medium mb-4"
-                  >
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </motion.h3>
-                  <motion.ul 
-                    variants={fadeIn('up', 0.4)}
-                    className="space-y-3"
-                  >
-                    {links.map((link, index) => (
-                      <motion.li 
-                        key={index}
-                        variants={fadeIn('up', 0.1 * (index + 1))}
-                      >
-                        <motion.a 
-                          whileHover={{ x: 5 }}
-                          href={link.href} 
-                          className="text-gray-600 hover:text-gray-900"
-                        >
-                          {link.name}
-                        </motion.a>
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                </motion.div>
+          {/* Column 2 & 3: Navigation Links */}
+          <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+            {linkGroups.map((group) => (
+              <FooterLinkGroup key={group.title} group={group} />
+            ))}
+          </div>
+
+          {/* Column 4: Social Media */}
+          <div className="mt-12 xl:mt-0 xl:col-span-1">
+            <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
+              Connect With Us
+            </h3>
+            <div className="mt-4 flex space-x-6">
+              {socialLinks.map((link) => (
+                // Note: Using react-social-icons library for easy styling
+                <SocialIcon
+                  key={link.label}
+                  url={link.url}
+                  style={{ height: 35, width: 35 }}
+                  fgColor="#fff" // White icon color
+                  bgColor="transparent" // Transparent background
+                  className="transition-opacity duration-200 hover:opacity-75"
+                  aria-label={link.label}
+                />
               ))}
             </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Copyright */}
-        <motion.div 
-          variants={fadeIn('up', 0.8)}
-          className="border-t border-gray-200 mt-12 pt-8"
-        >
-          <motion.div 
-            variants={fadeIn('up', 0.9)}
-            className="flex flex-col md:flex-row justify-between items-center gap-4"
-          >
-            <motion.p 
-              variants={fadeIn('right', 1.0)}
-              className="text-gray-600 text-sm"
-            >
-              Copyright © {new Date().getFullYear()} bucregaltech.com
-            </motion.p>
-            <motion.p 
-              variants={fadeIn('left', 1.0)}
-              className="text-gray-600 text-sm"
-            >
-              Created by Bello Mubarak Akinkunmi
-            </motion.p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
-    </motion.footer>
-  )
-}
+      
+      {/* Separator and Copyright */}
+      <div className="border-t border-gray-700">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 sm:flex sm:items-center sm:justify-between">
+          <p className="text-base text-gray-400">
+            &copy; {new Date().getFullYear()} Your Blog Name. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default BlogFooter;
