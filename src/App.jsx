@@ -8,7 +8,7 @@ import BlogFooter from './components/Footer'
 
 const App = () => {
   return (
-    <BrowserRouter basename="/entertainment">
+    <BrowserRouter basename="/bucregaltech">
       <Routes>
         {/* Route for the main landing page */}
         <Route path="/" element={
